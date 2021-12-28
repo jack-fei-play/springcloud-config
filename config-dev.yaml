@@ -1,2 +1,21 @@
-config:
-  info: "main branch,springcloud-config/config-dev.yaml version=1"
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jack-fei-play/springcloud-config.git
+          search-paths:
+            - springlcoud-config
+      label: main
+      username: 625019880@qq.com
+      password: yunfei951023
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka
